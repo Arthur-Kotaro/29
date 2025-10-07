@@ -1,22 +1,12 @@
 #include "Talents.hpp"
 
-void Talent::show_talents()
-{
-    std::cout << "Its talents: ";
-    for (int i = 0; i < talents_vec.size(); ++i) std::cout << '\"' << talents_vec[i] << "\" ";
-    std::cout << std::endl;
-}
-
 Talent::~Talent() {}
 
-
-Swimming::Swimming() {talents_vec.push_back("Swimming");}
+void Swimming::show_talent() { std::cout << "\"Swimming\"";}
 Swimming::~Swimming() {}
 
-
-Dancing::Dancing() {talents_vec.push_back("Dancing");}
+void Dancing::show_talent() { std::cout << "\"Dancing\"";}
 Dancing::~Dancing() {}
 
-
-Counting::Counting() {talents_vec.push_back("Counting");}
+void Counting::show_talent() { std::cout << "\"Counting\"";}
 Counting::~Counting() {}

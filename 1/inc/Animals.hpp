@@ -1,6 +1,8 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <vector>
+#include "Talents.hpp"
 
 
 class Animal
@@ -28,9 +30,11 @@ public:
 
 class Dog : virtual public Animal
 {
+    std::vector <Talent*> talents_vec;
 public:
     Dog(std::string _name, unsigned int _age);
-
-    virtual void voice() ;
+    void addTalent(Talent* newTalent);
+    void showTalents();
+    virtual void voice();
     ~Dog();
 };

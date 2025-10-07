@@ -1,33 +1,30 @@
 #pragma once
 #include <iostream>
-#include <vector>
 
 class Talent
 {
-protected:
-    std::vector<std::string> talents_vec;
 public:
-    virtual void show_talents();
+    virtual void show_talent() = 0;
     virtual ~Talent();
 };
 
 class Swimming: virtual public Talent
 {
 public:
-    Swimming();
+    virtual void show_talent();
     ~Swimming();
 };
 
 class Dancing: virtual public Talent
 {
 public:
-    Dancing();
+    virtual void show_talent();
     ~Dancing();
 };
 
 class Counting: virtual public Talent
 {
 public:
-    Counting();
+    virtual void show_talent();
     ~Counting();
 };

@@ -27,4 +27,22 @@ Cat::~Cat() {}
 
 Dog::Dog(std::string _name, unsigned int _age): Animal(_name, _age) {}
 void Dog::voice() {std::cout << "Bark! ";}
-Dog::~Dog(){}
+void Dog::addTalent(Talent* newTalent)
+{
+    talents_vec.push_back(newTalent);
+}
+void Dog::showTalents()
+{
+    std::cout << "It is " << name << ". its talents ";
+    for (int i = 0; i < talents_vec.size(); ++i)
+    {
+        talents_vec[i]->show_talent();
+        if (i < talents_vec.size() - 1) std::cout << ", ";
+    }
+    std::cout << ".\n";
+}
+
+Dog::~Dog()
+{
+    for (auto & i : talents_vec) delete i;
+}

@@ -1,25 +1,12 @@
 #include "main1.hpp"
 
-const int arr_size = 4;
-
-
-class TalentedDog: virtual public Dog, virtual public Swimming, virtual Dancing, virtual Counting
-{
-public:
-    TalentedDog(std::string _name, unsigned int _age): Dog(_name, age), Animal(_name, _age) {}
-    virtual void show_talents()
-    {
-        std::cout << "\nIt is " << getName() << ". ";
-        Talent::show_talents();
-    }
-};
-
-
 int main()
 {
     Animal* cat1 = new Cat("Vasya-Boy", 3);
     Animal* dog1 = new Dog("Bobik-Boy", 5);
-    TalentedDog* doggy = new TalentedDog("Jhony-Boy", 10);
+    Dog* doggy = new Dog("Jhony-Boy", 10);
+    doggy->addTalent(new Swimming());
+    doggy->addTalent(new Counting());
 
     std::cout << "Hello, I am " << cat1->getName() << ". I am " << cat1->getAge() << " years old. ";
     cat1->voice();
@@ -32,7 +19,7 @@ int main()
     std::cout << "Hello, I am " << doggy->getName() << ". I am " << doggy->getAge() << " years old. ";
     doggy->voice();
     std::cout << std::endl;
-    doggy->show_talents();
+    doggy->showTalents();
 
     delete cat1;
     delete dog1;
